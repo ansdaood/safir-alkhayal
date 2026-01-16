@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>حول سفير الخيال</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { cairo: ['Cairo', 'sans-serif'] } } } }
+  </script>
+</head>
+<body class="bg-black text-white font-cairo overflow-x-hidden relative">
+
+<!-- Particle background -->
+<div id="particles-js" class="fixed inset-0 z-0"></div>
+
+<section class="min-h-screen flex flex-col items-center justify-center relative text-center px-6">
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-black to-blue-900/40"></div>
+  <div class="relative z-10 max-w-3xl">
+    <h1 class="text-5xl md:text-6xl font-extrabold glitch neon mb-6" data-text="حول سفير الخيال">حول سفير الخيال</h1>
+    <p class="text-gray-300 text-lg mb-6">
+      سفير الخيال هو رفيقك إلى عالم الخيال والتكنولوجيا. <br/>
+      أقوم ببناء مواقع ويب وتطبيقات ويب، بوتات وأتمتة، وتجارب سينمائية مبهرة.
+    </p>
+    <p class="text-gray-400 text-base">
+      هدفنا هو جعل كل تجربة ويب تفاعلية، ذكية وسلسة للمستخدم، مع تصميم حديث واحترافي.
+    </p>
+    <div class="mt-10 flex gap-4 justify-center flex-wrap">
+      <a href="index.html" class="px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-700 transition">الرئيسية</a>
+      <a href="services.html" class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 transition">الخدمات</a>
+      <a href="#contact" class="px-6 py-3 rounded-xl border border-white/30 hover:bg-white/10 transition">تواصل معي</a>
+    </div>
+  </div>
+</section>
+
+<footer class="py-6 text-center text-gray-400 relative z-10">
+  © 2026 سفير الخيال | كل الحقوق محفوظة
+</footer>
+
+<!-- GSAP + Particles + Neon + Glitch -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.1/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+<script>
+const heroTitle = document.querySelector("h1");
+gsap.from(heroTitle,{duration:1.5,y:50,opacity:0,ease:"power4.out"});
+heroTitle.classList.add("glitch","neon");
+heroTitle.setAttribute("data-text",heroTitle.textContent);
+
+tsParticles.load("particles-js",{background:{color:{value:"#000"}},fpsLimit:60,
+interactivity:{events:{onHover:{enable:true,mode:"repulse"},onClick:{enable:true,mode:"push"}},modes:{repulse:{distance:100,duration:0.4},push:{quantity:4}}},
+particles:{color:{value:["#ff00ff","#00ffff","#ffffff"]},links:{enable:true,color:"#fff",distance:150},collisions:{enable:true},move:{enable:true,speed:1,direction:"none",outModes:{default:"bounce"}},number:{density:{enable:true,area:800},value:120},opacity:{value:0.5},shape:{type:"circle"},size:{value:{min:1,max:4}}},detectRetina:true});
+</script>
+
+</body>
+</html>
